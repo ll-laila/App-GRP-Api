@@ -21,7 +21,8 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: self-hosted
+   # runs-on: self-hosted
+    runs-on: [node-runner]
     steps:
       - name: Pull image from docker hub
         run: sudo docker pull laila23/nodejs-app:latest

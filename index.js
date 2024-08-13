@@ -16,7 +16,7 @@ app.post('/stripe_checkout', async (req, res) => {
     try {
         const chargeObject = await stripe.charges.create({
             amount: cantidadInMad,
-            currency: 'mad', // Devise MAD pour dirham marocain
+            currency: 'mad', 
             source: stripeToken,
             capture: false,
             description: 'plan',

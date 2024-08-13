@@ -18,13 +18,14 @@ jobs:
       - name: Publish image to docker hub
         run: docker push laila23/nodejs-app:latest
         
+
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
-        run: docker pull laila23/nodejs-app:latest
+        run: sudo docker pull laila23/nodejs-app:latest
       - name: Delete old container
-        run: docker rm -f nodejs-app-container  
+        run: sudo docker rm -f nodejs-app-container
       - name: Run docker container
-        run: docker run -d -p 3000:3000 --name nodejs-app-container laila23/nodejs-app
+        run: sudo docker run -d -p 3000:3000 --name nodejs-app-container laila23/nodejs-app

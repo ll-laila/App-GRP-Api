@@ -31,6 +31,10 @@ app.post('/stripe_checkout', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World, from express');
+})
+
 app.listen(4000, () => {
     console.log('Server listening on port 4000');
 });

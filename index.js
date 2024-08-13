@@ -31,6 +31,7 @@ app.post('/stripe_checkout', async (req, res) => {
     }
 });
 
+//home
 app.get('/', (req, res) => {
     res.send('Hello World, from express');
 })

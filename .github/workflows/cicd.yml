@@ -1,7 +1,7 @@
 name: Deploy Node Application
 
 on:
-  push: 
+  push:
     branches:
       - main
 
@@ -12,12 +12,11 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
       - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}       
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
         run: docker build -t laila23/nodejs-app .
       - name: Publish image to docker hub
         run: docker push laila23/nodejs-app:latest
-        
 
   deploy:
     needs: build

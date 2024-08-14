@@ -48,7 +48,7 @@ app.post('/stripe_checkout', async (req, res) => {
         res.status(500).json({ error: 'Payment failed, and refund issued.' });
     }
 });
-
+//
 app.listen(port, function () {
     console.log("Server is listening at port:" + port);
 });
